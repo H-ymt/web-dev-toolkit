@@ -11,7 +11,7 @@ export default function Header() {
             Dev<span className="inline-block w-1"></span>Toolbox
           </span>
           <Logo
-            className="rotate-[8deg] duration-300 group-hover:rotate-[5deg]"
+            className="rotate-[8deg] duration-300 group-hover:rotate-[4deg]"
             aria-hidden="true"
           />
         </Link>
