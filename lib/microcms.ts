@@ -37,13 +37,19 @@ export const client = createClient({
 })
 
 // ツール一覧を取得
-export const getList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Tool>({
+export const getList = async (categoryId?: string) => {
+  const queries: MicroCMSQueries = {}
+
+  if (categoryId) {
+    queries.filters = `category[equals]${categoryId}`
+  }
+
+  const { contents } = await client.getList<Tool>({
     endpoint: 'tools',
     queries,
   })
 
-  return listData
+  return { contents }
 }
 
 // カテゴリー一覧を取得

@@ -15,7 +15,7 @@ export default async function CategoryList() {
         .map((category: Category) => {
           return (
             <Link
-              href="/"
+              href={`/category/${category.id}`}
               key={category.id}
               className="rounded-lg px-2.5 py-2 text-sm text-muted-foreground duration-300 hover:bg-accent hover:text-foreground"
             >
