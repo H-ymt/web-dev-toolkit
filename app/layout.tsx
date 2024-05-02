@@ -1,11 +1,14 @@
+import MainLayout from '@/components/main-layout'
+import { ThemeProvider } from '@/components/theme-provider'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { DM_Sans, Open_Sans } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'] })
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 
 export const metadata: Metadata = {
-  title: 'Web Dev Toolbox',
+  title: 'Dev Toolbox',
   description: 'Web制作でよく使用するWebアプリやWebサイトをまとめたサイト',
 }
 
@@ -15,8 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ja">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja" suppressHydrationWarning>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <body className={`${openSans.className} ${dmSans.variable}`}>
+          <MainLayout>{children}</MainLayout>
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
