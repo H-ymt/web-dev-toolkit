@@ -11,6 +11,10 @@ export type Tool = {
   title: string
   content: string
   eyecatch?: MicroCMSImage
+  category: {
+    id: string
+    name: string
+  }
 } & MicroCMSDate
 
 export type Category = {
