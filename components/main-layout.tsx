@@ -11,7 +11,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <Header />
       <div className="flex items-start">
         <SideMenu />
-        <main>{children}</main>
+        <main className="w-full max-w-[1000px] px-4 py-4">{children}</main>
       </div>
     </div>
   )

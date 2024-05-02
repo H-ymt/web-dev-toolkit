@@ -1,13 +1,11 @@
-import Link from 'next/link'
+import CategoryList from './category-list'
 
 export default function SideMenu() {
   return (
-    <aside className="z-0 min-h-[100svh] min-w-60 bg-muted px-5 pt-8">
+    <aside className="z-0 min-h-[100svh] w-[200px] border-r px-3 pt-8">
       <nav aria-label="サイドメニュー">
-        <div className="grid grid-cols-1">
-          <Link href="/">first</Link>
-          <Link href="/">seconda</Link>
-          <Link href="/">three</Link>
+        <div className="hover:[&>a]:durataion-300">
+          <CategoryList />
         </div>
       </nav>
     </aside>

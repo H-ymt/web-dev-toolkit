@@ -1,10 +1,10 @@
 import MainLayout from '@/components/main-layout'
 import { ThemeProvider } from '@/components/theme-provider'
 import type { Metadata } from 'next'
-import { DM_Sans, Open_Sans } from 'next/font/google'
+import { DM_Sans, Inter } from 'next/font/google'
 import './globals.css'
 
-const openSans = Open_Sans({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <body className={`${openSans.className} ${dmSans.variable}`}>
+        <body className={`${inter.className} ${dmSans.variable}`}>
           <MainLayout>{children}</MainLayout>
         </body>
       </ThemeProvider>

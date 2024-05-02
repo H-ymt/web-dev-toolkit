@@ -1,5 +1,9 @@
-export default function Home() {
+import ToolList from '@/components/tool-list'
+
+export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <div className="">
+      <ToolList />
+    </div>
   )
 }
