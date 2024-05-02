@@ -1,21 +1,14 @@
-import {
-  MicroCMSContentId,
-  MicroCMSDate,
-  MicroCMSImage,
-  MicroCMSQueries,
-  createClient,
-} from 'microcms-js-sdk'
+import { MicroCMSContentId, MicroCMSQueries, createClient } from 'microcms-js-sdk'
 
 export type Tool = {
   id: string
   title: string
-  content: string
-  eyecatch?: MicroCMSImage
+  url: string
   category: {
     id: string
     name: string
   }
-} & MicroCMSDate
+}
 
 export type Category = {
   id: string
