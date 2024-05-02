@@ -1,3 +1,4 @@
+import ToolList from '@/components/tool-list'
 import { getList } from '@/lib/microcms'
 
 interface PageProps {
@@ -11,12 +12,8 @@ export default async function CategoryPage({ params }: PageProps) {
 
   return (
     <div>
-      <h1>Category: {params.id}</h1>
-      <ul>
-        {tools.map((tool) => {
-          return <li key={tool.id}>{tool.title}</li>
-        })}
-      </ul>
+      <h1 className="text-3xl">{params.id}</h1>
+      <ToolList categoryId={params.id} />
     </div>
   )
 }

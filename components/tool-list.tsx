@@ -1,7 +1,11 @@
 import { Tool, getList } from '@/lib/microcms'
 
-export default async function ToolList() {
-  const { contents } = await getList()
+interface ToolListProps {
+  categoryId?: string
+}
+
+export default async function ToolList({ categoryId }: ToolListProps) {
+  const { contents } = await getList(categoryId)
 
   if (!contents || contents.length === 0) {
     return <h1>No Contents</h1>
