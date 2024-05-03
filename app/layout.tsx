@@ -19,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <body className={`${inter.className} ${dmSans.variable}`}>
+      <body className={`${inter.className} ${dmSans.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <MainLayout>{children}</MainLayout>
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
