@@ -9,7 +9,8 @@ const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 
 export const metadata: Metadata = {
   title: 'Dev Toolbox',
-  description: 'Web制作でよく使用するWebアプリやWebサイトをまとめたサイト',
+  description:
+    'A site that compiles web applications and websites often used in web production',
 }
 
 export default function RootLayout({
