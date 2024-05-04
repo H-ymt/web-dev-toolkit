@@ -6,7 +6,7 @@ import { Github, ShowCaseIcon } from './ui/icons'
 export default function Menu() {
   return (
     <nav aria-label="グローバルナビゲーション">
-      <div className="flex items-center [&>a]:leading-[var(--nav-height)]">
+      <div className="flex items-center">
         <Link
           href="/showcase"
           className="flex items-center gap-1 px-2 text-muted-foreground duration-300 focus-within:text-primary hover:text-primary"
