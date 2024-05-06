@@ -9,9 +9,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div>
       <Header />
-      <div className="flex items-start">
+      <div className="items-start lg:flex">
         <SideMenu />
-        <main className="mx-auto w-full max-w-[1200px] px-4 py-4">{children}</main>
+        <main className="mx-auto w-full max-w-[1200px] px-6 py-7">{children}</main>
       </div>
     </div>
   )

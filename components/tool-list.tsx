@@ -1,4 +1,11 @@
 import { Tool, getList } from '@/lib/microcms'
+import Link from 'next/link'
+import GetOgImage from './get-og-image'
+import { Button } from './ui/button'
+import CopyButton from './ui/copy-button'
+import DescriptionButton from './ui/description-button'
+import ExternalLinkButton from './ui/external-link-button'
+import LikeButton from './ui/like-button'
 
 interface ToolListProps {
   categoryId?: string
@@ -12,21 +19,36 @@ export default async function ToolList({ categoryId }: ToolListProps) {
   }
 
   return (
-    <ul className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6 ">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
       {contents.map((tool: Tool) => {
         return (
-          <li
+          <div
             key={tool.id}
-            className="grid aspect-[4/3.5] w-full place-items-center text-ellipsis rounded-lg border p-4 text-sm"
+            className="group grid aspect-[4/3] place-items-center content-center text-ellipsis rounded-xl border text-sm duration-300 hover:bg-accent/40 focus:border-primary"
           >
-            <span>{tool.title}</span>
-            <span className="rounded-lg border px-2.5 py-1 text-xs text-muted-foreground">
-              <span className="mr-0.5">#</span>
-              {tool.category.name}
-            </span>
-          </li>
+            <GetOgImage url={tool.url} className="duration-300" />
+            <div className="grid place-items-center content-center gap-2 px-4 py-4 text-sm">
+              <h2>{tool.title}</h2>
+
+              <Button size="sm" variant="ghost" className="h-6 rounded-full" asChild>
+                <Link
+                  href={`/category/${tool.category.id}`}
+                  className="rounded-2xl border text-xs text-muted-foreground duration-300 hover:bg-accent"
+                >
+                  {tool.category.name}
+                </Link>
+              </Button>
+
+              <div className="grid grid-cols-4 place-items-center">
+                <CopyButton text={tool.url} />
+                <LikeButton />
+                <DescriptionButton tool={tool} />
+                <ExternalLinkButton url={tool.url} />
+              </div>
+            </div>
+          </div>
         )
       })}
-    </ul>
+    </div>
   )
 }

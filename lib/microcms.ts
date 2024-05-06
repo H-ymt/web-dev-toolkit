@@ -4,6 +4,7 @@ export type Tool = {
   id: string
   title: string
   url: string
+  description: string
   category: {
     id: string
     name: string
@@ -29,7 +30,7 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 })
 
-// ツール一覧を取得
+// ツール一覧を取得, `categoryId`を指定すると、そのカテゴリーのツール一覧を取得
 export const getList = async (categoryId?: string) => {
   const queries: MicroCMSQueries = {}
 
@@ -45,7 +46,7 @@ export const getList = async (categoryId?: string) => {
   return { contents }
 }
 
-// カテゴリー一覧を取得
+// カテゴリ一覧を取得
 export const getCategories = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Category>({
     endpoint: 'categories',
@@ -62,4 +63,6 @@ export const getDetail = async (contentId: string, queries?: MicroCMSQueries) =>
     contentId,
     queries,
   })
+
+  return detailData
 }

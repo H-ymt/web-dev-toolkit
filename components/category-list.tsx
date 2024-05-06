@@ -9,7 +9,7 @@ export default async function CategoryList() {
   }
 
   return (
-    <div className="grid">
+    <div className="grid border-l">
       {contents
         .sort((a, b) => a.name.localeCompare(b.name, 'ja'))
         .map((category: Category) => {
@@ -17,7 +17,7 @@ export default async function CategoryList() {
             <Link
               href={`/category/${category.id}`}
               key={category.id}
-              className="rounded-lg px-2.5 py-2 text-sm text-muted-foreground duration-300 hover:bg-accent hover:text-foreground"
+              className={`relative flex items-center py-2 pl-4 text-left text-sm text-muted-foreground duration-300 before:left-[-16px] before:h-4 before:w-[1px] before:bg-primary before:opacity-0 hover:text-foreground hover:before:contents hover:before:opacity-100`}
             >
               {category.name}
             </Link>
