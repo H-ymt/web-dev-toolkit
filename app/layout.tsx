@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 
 export const metadata: Metadata = {
-  title: 'Dev Toolbox',
+  title: {
+    template: '%s - DevToolbox',
+    default: 'Dev Toolbox',
+  },
   description:
     'A site that compiles web applications and websites often used in web production',
 }
