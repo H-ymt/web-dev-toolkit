@@ -35,17 +35,17 @@ export default async function ToolList({ categoryId }: ToolListProps) {
                   alt=""
                   width={1200}
                   height={630}
-                  className="aspect-[4/2.5] rounded-t-xl object-cover"
+                  className="aspect-[4/2] rounded-t-xl object-cover md:aspect-[4/2.5]"
                   loading="lazy"
                   decoding="async"
                 />
               ) : (
-                <p className="grid aspect-[4/2.5] w-full place-items-center border-b">
+                <p className="grid aspect-[4/2] w-full place-items-center border-b md:aspect-[4/2.5]">
                   No Image
                 </p>
               )}
             </Suspense>
-            <div className="grid w-full place-items-center content-center gap-2 px-4 py-5 text-sm">
+            <div className="grid w-full place-items-center content-center gap-2 px-4 py-6 text-sm md:py-5">
               <h2>{tool.title}</h2>
               <Button size="sm" variant="ghost" className="h-6 rounded-full" asChild>
                 <Link
