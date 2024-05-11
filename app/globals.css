@@ -78,4 +78,7 @@
   body {
     @apply h-full bg-background text-foreground;
   }
+  img {
+    @apply max-w-full h-auto;
+  }
 }
