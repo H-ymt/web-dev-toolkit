@@ -7,5 +7,10 @@ interface PageProps {
 }
 
 export default async function CategoryPage({ params }: PageProps) {
-  return <ToolList categoryId={params.id} />
+  return (
+    <>
+      <h1 className="pb-5 text-3xl">{params.id}</h1>
+      <ToolList categoryId={params.id} />
+    </>
+  )
 }

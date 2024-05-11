@@ -27,9 +27,18 @@ export default function CopyButton({ text }: CopyButtonProps) {
       onClick={copyToClipboard}
       variant="ghost"
       size="icon"
-      className="size-8"
+      className="relative size-8"
     >
-      {copied ? <Check size={16} strokeWidth={1} /> : <Copy size={16} strokeWidth={1} />}
+      {copied ? (
+        <div className="relative">
+          <span className="absolute left-1/2 top-[-28px] inline-flex w-full translate-x-[-50%] justify-center text-[10px]">
+            Copied
+          </span>
+          <Check size={16} strokeWidth={1} />
+        </div>
+      ) : (
+        <Copy size={16} strokeWidth={1} />
+      )}
       <span className="sr-only">Copy URL</span>
     </Button>
   )
