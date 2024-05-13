@@ -21,12 +21,12 @@ export default async function ToolList({ categoryId }: ToolListProps) {
   }
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6 md:gap-4">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-6 md:gap-4">
       {contents.map((tool: Tool) => {
         return (
           <div
             key={tool.id}
-            className="group row-span-2 grid aspect-[4/3] max-w-full grid-rows-subgrid gap-y-0 text-ellipsis rounded-xl text-sm shadow-[0_0_0_1px] shadow-border duration-300 focus-within:shadow-[0_0_1px_1px] focus-within:shadow-primary hover:bg-accent/40 hover:shadow-[0_0_2px_1px] hover:shadow-primary"
+            className="group row-span-2 grid max-w-full grid-rows-subgrid gap-y-0 text-ellipsis rounded-xl text-sm shadow-[0_0_0_1px] shadow-border duration-300 focus-within:shadow-[0_0_1px_1px] focus-within:shadow-primary hover:bg-accent/40 hover:shadow-[0_0_2px_1px] hover:shadow-primary"
           >
             <Suspense fallback={<Skeleton />}>
               {tool.image ? (
@@ -35,12 +35,12 @@ export default async function ToolList({ categoryId }: ToolListProps) {
                   alt=""
                   width={1200}
                   height={630}
-                  className="aspect-[4/2] rounded-t-xl object-cover md:aspect-[4/2.5]"
+                  className="aspect-[4/2] rounded-t-xl object-cover"
                   loading="lazy"
                   decoding="async"
                 />
               ) : (
-                <p className="grid aspect-[4/2] w-full place-items-center border-b md:aspect-[4/2.5]">
+                <p className="grid aspect-[4/2] w-full place-items-center border-b">
                   No Image
                 </p>
               )}
