@@ -40,12 +40,10 @@ export default async function ToolList({ categoryId }: ToolListProps) {
                   decoding="async"
                 />
               ) : (
-                <p className="grid aspect-[4/2] w-full place-items-center border-b">
-                  No Image
-                </p>
+                <p className="grid aspect-[4/2] w-full place-items-center">No Image</p>
               )}
             </Suspense>
-            <div className="grid w-full place-items-center content-center gap-2 px-4 py-6 text-sm md:py-5">
+            <div className="grid w-full place-items-center content-center gap-2 border-t px-4 py-6 text-sm md:py-5">
               <h2>{tool.title}</h2>
               <Button size="sm" variant="ghost" className="h-6 rounded-full" asChild>
                 <Link
