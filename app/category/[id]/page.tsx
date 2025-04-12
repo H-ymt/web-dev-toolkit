@@ -8,9 +8,11 @@ interface PageProps {
 }
 
 export default async function CategoryPage({ params }: PageProps) {
+  const { id: categoryId } = await params
+
   return (
     <>
-      <ToolList categoryId={params.id} />
+      <ToolList categoryId={categoryId} />
     </>
   )
 }
