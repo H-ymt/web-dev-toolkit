@@ -26,7 +26,7 @@ export default async function ToolList({ categoryId }: ToolListProps) {
         return (
           <div
             key={tool.id}
-            className="group row-span-2 grid max-w-full grid-rows-subgrid gap-y-0 text-ellipsis rounded-xl text-sm shadow-[0_0_0_1px] shadow-border duration-300 focus-within:shadow-[0_0_1px_1px] focus-within:shadow-primary hover:bg-accent/40 hover:shadow-[0_0_2px_1px] hover:shadow-primary"
+            className="group row-span-2 grid max-w-full grid-rows-subgrid gap-y-0 text-ellipsis rounded-xl text-sm shadow-[0_0_0_1px] shadow-border duration-300 focus-within:shadow-[0_0_1px_1px] focus-within:shadow-primary hover:bg-accent/40 hover:shadow-[0_0_2px_2px] hover:shadow-primary"
           >
             <Suspense fallback={<Skeleton />}>
               {tool.image ? (
