@@ -1,7 +1,8 @@
 'use client'
 
 import { Category } from '@/lib/microcms'
-import Link from 'next/link'
+import { Loader } from 'lucide-react'
+import Link, { useLinkStatus } from 'next/link'
 import { usePathname } from 'next/navigation'
 
 interface CategoryListItemProps {
@@ -27,9 +28,17 @@ export default function CategoryListItem({ categories }: CategoryListItemProps) 
               } relative flex items-center py-2 pl-4 text-left text-sm duration-300 before:absolute before:left-[-2px] before:h-4 before:w-[2px] before:bg-primary before:opacity-0 hover:text-foreground hover:before:opacity-100`}
             >
               {category.name}
+              <LinkStatus />
             </Link>
           )
         })}
     </div>
   )
+}
+
+function LinkStatus() {
+  const { pending } = useLinkStatus()
+  return pending ? (
+    <Loader aria-label="Loading" className="ml-1 animate-pulse" size={14} />
+  ) : null
 }
